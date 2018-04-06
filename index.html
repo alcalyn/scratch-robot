@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+        <title>Blockly app</title>
+
+        <link rel="stylesheet" type="text/css" href="all.css">
+    </head>
+    <body>
+        <div id="blocklyDiv"></div>
+
+        <script src="JS-Interpreter/acorn.js"></script>
+        <script src="JS-Interpreter/interpreter.js"></script>
+
+        <script src="blockly/blockly_compressed.js"></script>
+        <script src="blockly/blocks_compressed.js"></script>
+        <script src="blockly/javascript_compressed.js"></script>
+        <script src="blockly/msg/js/fr.js"></script>
+
+        <script src="blockly-custom/blocks/robot.js"></script>
+        <script src="blockly-custom/generators/javascript/robot.js"></script>
+        <script src="blockly-custom/msg/js/fr.js"></script>
+
+        <xml id="toolbox" style="display: none">
+            <block type="move_forward"></block>
+            <block type="turn"></block>
+            <block type="wait_seconds"></block>
+
+            <block type="controls_repeat_ext"></block>
+            <block type="math_number"></block>
+            <block type="text_print"></block>
+            <block type="text"></block>
+        </xml>
+
+        <div class="buttons">
+            <button onclick="run()">C'est parti !</button>
+        </div>
+
+        <script src="Robot.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

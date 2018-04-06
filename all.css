@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+#blocklyDiv {
+    width: 100%;
+    height: 100%;
+}
+.buttons {
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+}
+.buttons button {
+    font-size: 1.5em;
+}
