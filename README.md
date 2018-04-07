@@ -10,18 +10,16 @@ git clone git@github.com:alcalyn/scratch-robot.git
 
 cd scratch-robot/
 
-# Needs blockly and JS-Interpreter
+# Needs blockly and JS-
+cd www/
 git clone git@github.com:google/blockly.git
 git clone git@github.com:NeilFraser/JS-Interpreter.git
+cd ../
+
+make
 ```
 
-
-## Usage
-
-Once installed, open `index.html` with your browser.
-
-Using docker, you can host the application with `make`.
-Then go to <http://0.0.0.0:8765/>.
+Then go to <http://0.0.0.0:8480/index.html>.
 
 
 ## License
