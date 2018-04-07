@@ -4,16 +4,26 @@ var Environment = {
 };
 
 var websocketSession = null;
+var nextDoneCallback = null;
+
+function doneReceived() {
+    if (nextDoneCallback) {
+        var lastCallback = nextDoneCallback;
+        nextDoneCallback = null;
+        lastCallback();
+    }
+}
 
 function onSessionOpen(session) {
     websocketSession = session;
 
-    session.subscribe('robot', function (topic, event) {
-        console.log(event);
+    websocketSession.subscribe('robot', function (topic, event) {
+        if ('done' === event.message) {
+            doneReceived();
+        }
     });
 
-    // Publish a message to 'chat/general' topic
-    session.publish('robot', 'Hello friend !');
+    websocketSession.publish('robot', 'Hello friend !');
 }
 
 ab.connect(Environment.websocketServer, onSessionOpen, console.warn);
@@ -21,21 +31,29 @@ ab.connect(Environment.websocketServer, onSessionOpen, console.warn);
 var Robot = {
     forward: function (done) {
         console.log('J\'avance !');
-        setTimeout(done, 500);
+
+        nextDoneCallback = done;
+        websocketSession.publish('robot', 'forward');
     },
 
     backward: function (done) {
         console.log('Je recule !');
-        setTimeout(done, 500);
+
+        nextDoneCallback = done;
+        websocketSession.publish('robot', 'backward');
     },
 
     turnLeft: function (done) {
         console.log('Je tourne à gauche !');
-        setTimeout(done, 500);
+
+        nextDoneCallback = done;
+        websocketSession.publish('robot', 'left');
     },
 
     turnRight: function (done) {
         console.log('Je tourne à droite !');
-        setTimeout(done, 500);
+
+        nextDoneCallback = done;
+        websocketSession.publish('robot', 'right');
     }
 };

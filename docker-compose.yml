@@ -15,6 +15,7 @@ services:
         container_name: scratch-robot-ws
         build: docker/php-fpm
         command: php bin/websocket-server
+        env_file: .env
         ports:
             - 8482:8482
         volumes:
@@ -23,6 +24,7 @@ services:
     php-fpm:
         container_name: scratch-robot-php
         build: docker/php-fpm
+        env_file: .env
         volumes:
             - .:/var/www/html/
         links:
