@@ -33,6 +33,10 @@ stop:
 
 book:
 	#
+	# Scratch Robot
+	#
+	#  http://0.0.0.0:8480/index.html                Interface
+	#
 	# Default urls:
 	#  http://0.0.0.0:8480/hello/world.html          Diagnostic page.
 	#  http://0.0.0.0:8480/index-dev.php/api/hello   *hello world* route in **dev** mode.
