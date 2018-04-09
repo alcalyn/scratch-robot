@@ -4,7 +4,6 @@ namespace Provider\RestApi;
 
 use Pimple\ServiceProviderInterface;
 use Pimple\Container;
-use Sorien\Provider\DoctrineProfilerServiceProvider;
 use Silex\Provider;
 use Eole\Sandstone\Push\Debug\PushServerProfilerServiceProvider;
 
@@ -24,6 +23,5 @@ class WebProfilerProvider implements ServiceProviderInterface
         ));
 
         $app->register(new PushServerProfilerServiceProvider());
-        $app->register(new DoctrineProfilerServiceProvider());
     }
 }

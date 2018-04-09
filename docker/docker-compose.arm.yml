@@ -9,9 +9,3 @@ services:
 
     php-fpm:
         build: docker/php-fpm-rpi
-
-    database:
-        image: izone/arm:mariadb
-
-    phpmyadmin:
-        image: izone/arm:phpmyadmin

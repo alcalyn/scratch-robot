@@ -12,8 +12,5 @@ class ServiceProvider implements ServiceProviderInterface
      */
     public function register(Container $app)
     {
-        $app['doctrine.mappings'] = function () {
-            return [];
-        };
     }
 }

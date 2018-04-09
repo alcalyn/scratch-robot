@@ -2,36 +2,20 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping\Entity;
-use Doctrine\ORM\Mapping\Id;
-use Doctrine\ORM\Mapping\Column;
-use Doctrine\ORM\Mapping\GeneratedValue;
-
-/**
- * @Entity
- */
 class Article
 {
     /**
      * @var int
-     *
-     * @Id
-     * @Column(type="integer")
-     * @GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
-     *
-     * @Column(type="string")
      */
     private $title;
 
     /**
      * @var \DateTime
-     *
-     * @Column(type="datetime")
      */
     private $dateCreated;
 

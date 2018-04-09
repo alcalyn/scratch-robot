@@ -21,13 +21,10 @@ class Application extends BaseApplication
         $this->register(new Provider\ServiceProvider());
 
         $this->registerUserProviders();
-
-        $this->register(new Provider\DoctrineProvider());
     }
 
     /**
      * Here is user application providers for both RestApi and websocket containers.
-     * Register services, doctrine mappings...
      */
     private function registerUserProviders()
     {

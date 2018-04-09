@@ -44,7 +44,7 @@ class HelloController
             'hello' => $name,
         ];
 
-        $result['articles'] = $this->container['orm.em']->getRepository('App\\Entity\\Article')->findAll();
+        $result['articles'] = [];
 
         $this->container['dispatcher']->dispatch(HelloEvent::HELLO, new HelloEvent($name));
 

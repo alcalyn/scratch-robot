@@ -22,8 +22,6 @@ function onSessionOpen(session) {
             doneReceived();
         }
     });
-
-    websocketSession.publish('robot', 'Hello friend !');
 }
 
 ab.connect(Environment.websocketServer, onSessionOpen, console.warn);

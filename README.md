@@ -16,6 +16,8 @@ git clone git@github.com:google/blockly.git
 git clone git@github.com:NeilFraser/JS-Interpreter.git
 cd ../
 
+cp .env.dist .env
+
 make
 ```
 

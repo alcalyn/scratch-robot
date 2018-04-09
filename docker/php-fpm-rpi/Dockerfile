@@ -10,7 +10,6 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
 RUN docker-php-ext-install intl \
- && docker-php-ext-install pdo_mysql mysqli \
  && docker-php-ext-install zip
 
 # install composer
