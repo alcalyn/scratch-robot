@@ -2,6 +2,8 @@
 
 Control and program a robot with scratch language.
 
+![Demo Scratch robot](demo.gif)
+
 
 ## Install
 
